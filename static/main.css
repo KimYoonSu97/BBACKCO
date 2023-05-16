@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 a {
-  color: #fff;
+  color: black;
 }
 li {
   list-style: none;
@@ -18,15 +18,21 @@ header {
   justify-content: space-between;
   width: 100%;
   height: 50px;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(255, 255, 255, 0.8);
 }
-header > .logo {
+header .logo {
   width: 150px;
   height: 50px;
-  background-color: #fff;
+  background-image: url("../static/image/대지\ 1@4x-8.png");
+  background-size: 30%;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
 }
+
 header > .menu {
-  width: 30%;
+  width: 50%;
+  margin-right: 50px;
 }
 header > .menu > ul {
   width: 100%;
@@ -35,6 +41,17 @@ header > .menu > ul {
   justify-content: space-between;
   align-items: center;
 }
+
+header > .menu > ul > a {
+  text-decoration: none;
+  color: gray;
+  font-weight: 700;
+}
+
+header > .menu > ul > a:hover {
+  color: black;
+}
+
 #wrap {
   width: 100%;
   height: 100vh;
@@ -49,26 +66,73 @@ header > .menu > ul {
   width: 100%;
   height: 100vh;
   text-align: center;
-  background-color: tomato;
+
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.8)),
+    url("../static/image/lautaro-andreani-xkBaqlcqeb4-unsplash.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-size: contain;
 }
+
+#project .project-name {
+  color: white;
+  font-weight: 700;
+  font-size: 40px;
+  font-style: italic;
+}
+
+#project .project-info-1 {
+  color: white;
+  font-weight: 700;
+  font-size: 20px;
+  margin: 20px 0 20px;
+}
+
+#project .project-info-2 {
+  color: white;
+  margin: 20px 0 20px;
+}
+
 #team {
+  margin-top: 50px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
   height: 100vh;
   text-align: center;
-  background-color: aquamarine;
 }
 .team-info {
   display: flex;
   flex-direction: column;
   justify-content: center;
   background-color: #fff;
-  height: 50%;
+  height: 100%;
 }
+
+.team-info img {
+  width: 300px;
+  margin: 0 auto 0;
+}
+
+.team-info h2 {
+  font-size: 40px;
+  font-weight: 700;
+  margin: 20px;
+}
+
+.team-info .info-1 {
+  margin: 10px;
+  font-size: 20px;
+}
+
+.team-info .info-2 {
+  margin: 10px;
+  line-height: 1.5;
+}
+
 .team-promise {
-  height: 50%;
+  height: 90%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -77,40 +141,74 @@ header > .menu > ul {
   width: 60%;
   height: 300px;
   margin: 0 auto;
-  background: #fff;
+  line-height: 2;
+}
+.team-promise > .timetable p {
+  width: 550px;
+  background-color: royalblue;
+  margin: 20px auto 0;
+  padding-bottom: 20px;
+  border-radius: 30px;
+  font-weight: 600;
+  color: white;
 }
 #member {
-  background-color: lightpink;
+  padding: 50px;
+  background-color: rgba(0, 0, 255, 0.1);
 }
 .member-inner {
   width: 60%;
   margin: 0 auto;
   text-align: center;
-  background-color: #fff;
 }
+
+.member-inner h2 {
+  margin-bottom: 20px;
+}
+
 .member-box {
+  padding: 30px;
   display: flex;
   justify-content: space-between;
-  width: 60%;
+
+  max-width: 900px;
+  min-width: 900px;
   margin: 0 auto;
-  background-color: #eee;
+  border-radius: 40px;
+  background-color: white;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
 }
 .member-img {
+  border-radius: 30px;
   width: 300px;
   height: 400px;
   background-color: #000;
 }
 .member-txt-box {
+  width: 500px;
+  margin-top: 20px;
   display: flex;
   flex-grow: 1;
   flex-direction: column;
   align-items: center;
 }
+
+.member-txt-box {
+  max-width: 500px;
+}
+
 .member-txt-box > div {
+  margin: 10px;
+  width: 480px;
   height: 33.3333%;
 }
+
+.member-txt-box > div h3 {
+  margin-bottom: 5px;
+}
+
 #member .white-box {
-  background-color: #fff;
+  /* background-color: #fff; */
 }
 
 #reaction {
@@ -152,17 +250,16 @@ footer {
 }
 
 #form {
-  height: 350px;
+  height: 440px;
   /*margin-top: 10px;*/
   overflow: hidden;
 
-  background-color: gray;
+  background-color: rgba(0, 0, 0, 0.1);
 
   max-width: 800px;
   width: 95%;
   margin: 50px auto 0px auto;
-  box-shadow: 0px 0px 3px 0px gray;
-  background-color: #e8e8e8;
+
   border-radius: 20px;
   padding: 20px;
   font-size: 14px;
@@ -195,6 +292,19 @@ footer {
 }
 
 .table {
-  margin: 40px 0;
+  margin: 40px auto 0;
   font-size: 18px;
+  width: 800px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-collapse: collapse;
+}
+
+thead > tr > th {
+  padding: 20px;
+}
+
+tr,
+td {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 10px;
 }

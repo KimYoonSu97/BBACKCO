@@ -27,3 +27,14 @@ db = client.dbsparta
 # db.users.delete_one({'name':'bobby'})
 
 # 여기서부터 설명하고 코드를 작성해 주세요!!!
+
+@app.route('/')
+def home():
+    return render_template('index.html')
+
+
+
+
+if __name__ == '__main__':
+    app.run('0.0.0.0', port=5001, debug=True)
+    
