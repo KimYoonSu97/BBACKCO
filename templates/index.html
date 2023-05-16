@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>빡코</title>
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <div id="wrap">
+      <header>
+        <div class="logo">background로 logo 이미지 삽입</div>
+        <div class="menu">
+          <ul>
+            <a href="#team"><li>팀소개</li></a>
+            <a href="#kys"><li>김윤수</li></a>
+            <a href="#jyg"><li>조윤건</li></a>
+            <a href="#peh"><li>박은희</li></a>
+            <a href="#jyi"><li>조유이</li></a>
+            <a href="#ksa"><li>김선아</li></a>
+            <a href="#promise"><li>응원하기</li></a>
+          </ul>
+        </div>
+      </header>
+      <section id="project">
+        <h1 class="project-name">프로젝트명</h1>
+        <p class="project-info">프로젝트 소개란입니다</p>
+      </section>
+      <section id="team">
+        <div class="team-info">
+          <h2>팀이름</h2>
+          <p>팀소개</p>
+          <p>팀의 목표</p>
+        </div>
+        <div class="team-promise">
+          <h2>우리팀의 약속</h2>
+          <div class="timetable">
+            표 속성등을 활용하거나... 등등으로 타임테이블을 이쪽에 넣습니다!
+          </div>
+        </div>
+      </section>
+      <section id="member">
+        <div id="kys">
+          <div class="member-inner">
+            <h2>김윤수(팀장)</h2>
+            <div class="member-box">
+              <div class="member-img">
+                이쪽에 이미지를 bg로 등록 (img도 괜찮습니다)
+              </div>
+              <div class="member-txt-box">
+                <div class="member-info">
+                  <h3>자기소개</h3>
+                  <p class="white-box">이쪽에 자기소개 입력</p>
+                </div>
+                <div class="member-strength">
+                  <h3>자신의 장점</h3>
+                  <p class="white-box">이쪽에 장점 입력</p>
+                </div>
+                <div class="member-style">
+                  <h3>협업 스타일(동물)</h3>
+                  <p class="white-box">이쪽에 협업 스타일 입력</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="reaction">
+        <div id="form">
+          <h2 class="formMent">앞으로 멋진 개발자가 될 우리를 응원해줘.</h2>
+          <input
+            class="formName"
+            id="name"
+            type="text"
+            placeholder="이름을 입력하세요"
+          /><br />
+          <select class="formFire" id="fire">
+            <option value="" disabled selected>-- 에너지 --</option>
+            <option value="5">🔥🔥🔥🔥🔥</option>
+            <option value="4">🔥🔥🔥🔥</option>
+            <option value="3">🔥🔥🔥</option>
+            <option value="2">🔥🔥</option>
+            <option value="1">🔥</option></select
+          ><br />
+          <textarea
+            name="review"
+            id="review"
+            class="review"
+            cols="100"
+            rows="10"
+            placeholder="응원 메시지를 남겨주세요."
+          ></textarea
+          ><br />
+          <div class="formButtons">
+            <input
+              onclick="save_form()"
+              class="formButton"
+              type="submit"
+              value="응원하기"
+            />
+            <input
+              onclick="close_box()"
+              class="formButton2"
+              type="submit"
+              value="닫기"
+            />
+          </div>
+        </div>
+
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">닉네임</th>
+              <th scope="col">응원 에너지🔥</th>
+              <th scope="col">응원의 말</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>홍길동</td>
+              <td>🔥🔥🔥</td>
+              <td>코멘트</td>
+            </tr>
+            <tr>
+              <td>임꺽정</td>
+              <td>🔥🔥🔥🔥🔥</td>
+              <td>코멘트</td>
+            </tr>
+            <tr>
+              <td>세종대왕</td>
+              <td>🔥🔥🔥🔥🔥</td>
+              <td>코맨트</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <footer>
+        <h3>시작은 미미하나, 그 끝은 창대하리라</h3>
+      </footer>
+    </div>
+  </body>
+</html>
