@@ -48,7 +48,7 @@ function member() {
                                             </div>
                                             <div class="member-style">
                                                 <h3>협업 스타일(동물)</h3>
-                                                <p class="white-box">이쪽에 자기소개 입력dmf ajdksndkl;a</p>
+                                                <p class="white-box">${style}</p>
                                             </div>
                                         </div>
                                     </div>
