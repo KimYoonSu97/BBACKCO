@@ -5,6 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{ 빡 🔥 코 }</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+
     <link rel="stylesheet" href="../static/main.css" />
     <script src="../static/main.js"></script>
   </head>
@@ -13,13 +32,12 @@
       <header>
         <div class="logo"></div>
         <div class="menu">
-          <ul>
+          <ul id="nav-bar">
             <a href="#team"><li>팀소개🧑🏼‍🎨</li></a>
-            <a href="#promise"><li>응원하기🔥</li></a>
-            <a href="#kys"><li>김윤수🐰</li></a>
-            <a href="#jyg"><li>조윤건🐰</li></a>
-            <a href="#peh"><li>박은희🐰</li></a>
-            <a href="#ksa"><li>김선아🐰</li></a>
+            <a href="#reaction"><li>응원하기🔥</li></a>
+            <a href="#김윤수"><li>김윤수🐰</li></a>
+            <a href="#조윤건"><li>조윤건🐰</li></a>
+            <a href="#박은희"><li>박은희🐰</li></a>
           </ul>
         </div>
       </header>
@@ -61,6 +79,8 @@
             <h2>김윤수(팀장)</h2>
             <div class="member-box">
               <div class="member-img">
+                <img src="" alt="" />
+
                 이쪽에 이미지를 bg로 등록 (img도 괜찮습니다)
               </div>
               <div class="member-txt-box">
@@ -104,11 +124,11 @@
             <option value="1">🔥</option></select
           ><br />
           <textarea
-            name="review"
-            id="review"
-            class="review"
+            name="comment"
+            id="comment"
+            class="comment"
             cols="100"
-            rows="10"
+            rows="2"
             placeholder="응원 메시지를 남겨주세요."
           ></textarea
           ><br />
@@ -137,7 +157,7 @@
             <th class="words" scope="col">응원의 말</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody id="comment-show">
           <tr>
             <td>홍길동</td>
             <td>🔥🔥🔥</td>
@@ -157,7 +177,8 @@
       </table>
 
       <footer>
-        <h3>시작은 미미하나, 그 끝은 창대하리라</h3>
+        <h1>시작은 미미하나, 그 끝은 창대하리라</h1>
+        <h4>- 팀 빡코 일동 -</h4>
       </footer>
     </div>
   </body>
