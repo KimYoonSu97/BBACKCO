@@ -157,14 +157,13 @@ header > .menu > ul > a:hover {
   background-color: rgba(0, 0, 255, 0.1);
 }
 .member-inner {
-  width: 100%;          /*소개 박스 잘림 방지*/
+  width: 100%; /*소개 박스 잘림 방지*/
   margin: 0 auto;
   text-align: center;
 
   display: flex;
   flex-direction: column;
   align-items: center;
-
 }
 
 .member-inner h2 {
@@ -186,17 +185,24 @@ header > .menu > ul > a:hover {
 }
 .member-img {
   border-radius: 30px;
-  max-width: 300px;        /*이미지 크기 고정*/
+  max-width: 300px; /*이미지 크기 고정*/
   min-width: 300px;
-
+  min-height: 400px;
   max-height: 400px;
   background-color: #000;
   overflow: hidden;
-  object-fit: scale-down;
-
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+}
+.member-img > img {
+  position: absolute;
+  /* width: 100%; */
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .member-txt-box {
@@ -209,10 +215,9 @@ header > .menu > ul > a:hover {
   align-items: center;
 }
 
-
 .member-txt-box > div {
   margin: 10px;
-  width: 90%;      /*자기소개 잘림 방지*/
+  width: 90%; /*자기소개 잘림 방지*/
   height: 33.3333%;
 }
 
@@ -221,7 +226,8 @@ header > .menu > ul > a:hover {
 }
 
 #member .white-box {
-   background-color: #fff;
+  background-color: #fff;
+  white-space: normal;
 }
 
 #reaction {
@@ -281,7 +287,7 @@ footer {
 .formName,
 .formFire,
 .comment,
-.formButton{
+.formButton {
   box-sizing: border-box;
   width: 100%;
   padding: 10px;
@@ -290,20 +296,18 @@ footer {
   border-radius: 10px;
 }
 
-.formButton:hover{
+.formButton:hover {
   font-weight: bold;
   background-color: lightgray;
   cursor: pointer;
 }
 
-.formButton{
+.formButton {
   background-color: white;
   color: black;
   margin: 0;
   margin-right: 10px;
-
 }
-
 
 .formMent {
   font-size: 20px;
@@ -335,7 +339,122 @@ td {
   padding: 10px;
 }
 
-
-.section input[#slide]{
+.section {
+  margin: 0;
+  padding: 0;
+}
+.section input[id*="slide"] {
   display: none;
+}
+.section .slidelist {
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+}
+.section .slidelist > li {
+  display: inline-block;
+  vertical-align: middle;
+  width: 100%;
+  transition: all 0.5s;
+} /*슬라이드 가로배치*/
+.section .slidelist > li > a {
+  display: block;
+  position: relative;
+}
+.section .slidelist label {
+  position: absolute;
+  z-index: 10;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 50px;
+  cursor: pointer;
+}
+
+/* input에 체크되면 슬라이드 효과 */
+.section input[id="slide01"]:checked ~ .slidewrap .slidelist > li {
+  transform: translateX(0%);
+}
+.section input[id="slide02"]:checked ~ .slidewrap .slidelist > li {
+  transform: translateX(-100%);
+}
+.section input[id="slide03"]:checked ~ .slidewrap .slidelist > li {
+  transform: translateX(-200%);
+}
+
+/* 좌,우 슬라이드 버튼 */
+.slide-control > div {
+  display: none;
+}
+.section .left {
+  left: 20px;
+  background: url("https://cdn.pixabay.com/photo/2012/04/05/01/56/arrow-25834_640.png")
+    center center / 100% no-repeat;
+}
+.section .right {
+  right: 20px;
+  background: url("https://cdn.pixabay.com/photo/2012/04/05/01/56/arrow-25832_640.png")
+    center center / 100% no-repeat;
+}
+.section
+  input[id="slide01"]:checked
+  ~ .slidewrap
+  .slide-control
+  > div:nth-child(1) {
+  display: block;
+}
+.section
+  input[id="slide02"]:checked
+  ~ .slidewrap
+  .slide-control
+  > div:nth-child(2) {
+  display: block;
+}
+.section
+  input[id="slide03"]:checked
+  ~ .slidewrap
+  .slide-control
+  > div:nth-child(3) {
+  display: block;
+}
+
+/* 페이징 */ /*input 버튼 속성*/
+.slide-pagelist {
+  text-align: center;
+  padding: 20px;
+}
+.slide-pagelist > li {
+  display: inline-block;
+  vertical-align: middle;
+}
+.slide-pagelist > li > label {
+  display: block;
+  padding: 8px 30px;
+  border-radius: 30px;
+  background: #ccc;
+  margin: 20px 10px;
+  cursor: pointer;
+}
+.section
+  input[id="slide01"]:checked
+  ~ .slidewrap
+  .slide-pagelist
+  > li:nth-child(1)
+  > label {
+  background: #999;
+}
+.section
+  input[id="slide02"]:checked
+  ~ .slidewrap
+  .slide-pagelist
+  > li:nth-child(2)
+  > label {
+  background: #999;
+}
+.section
+  input[id="slide03"]:checked
+  ~ .slidewrap
+  .slide-pagelist
+  > li:nth-child(3)
+  > label {
+  background: #999;
 }
