@@ -99,6 +99,7 @@ header > .menu > ul > a:hover {
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
+  height: 100vh;
   text-align: center;
 }
 .team-info {
@@ -106,7 +107,7 @@ header > .menu > ul > a:hover {
   flex-direction: column;
   justify-content: center;
   background-color: #fff;
-  height: 500px;
+  height: 100%;
 }
 
 .team-info img {
@@ -131,9 +132,14 @@ header > .menu > ul > a:hover {
 }
 
 .team-promise {
-  margin: 30px 0 60px;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .team-promise > .timetable {
+  width: 60%;
+  height: 300px;
   margin: 0 auto;
   line-height: 2;
 }
@@ -146,34 +152,18 @@ header > .menu > ul > a:hover {
   font-weight: 600;
   color: white;
 }
-
-.team-promise button {
-  margin-top: 20px;
-
-  padding: 10px;
-  color: royalblue;
-  background-color: white;
-  border: 1px solid royalblue;
-  border-radius: 20px;
-}
-.team-promise button:hover {
-  color: white;
-  background-color: royalblue;
-}
-
 #member {
   padding: 50px;
   background-color: rgba(0, 0, 255, 0.1);
 }
-
-.member-card {
-  margin-top: 30px;
-}
-
 .member-inner {
-  width: 60%;
+  width: 100%; /*소개 박스 잘림 방지*/
   margin: 0 auto;
   text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .member-inner h2 {
@@ -186,46 +176,41 @@ header > .menu > ul > a:hover {
   justify-content: space-between;
 
   max-width: 900px;
-  min-width: 900px;
+  width: 100%;
+  /*min-width: 900px;*/
   margin: 0 auto;
   border-radius: 40px;
   background-color: white;
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
 }
-.member-box .imgContainer {
-  width: 400px;
+.member-img {
+  border-radius: 30px;
+  max-width: 300px; /*이미지 크기 고정*/
+  min-width: 300px;
+
+  max-height: 400px;
+  background-color: #000;
   overflow: hidden;
-  position: relative;
-  border-radius: 20px;
-}
+  object-fit: scale-down;
 
-.member-box .imgContainer img {
-  position: absolute;
-  height: 100%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.member-txt-box {
-  width: 500px;
-  margin-top: 20px;
-  margin-left: 20px;
   display: flex;
-  flex-grow: 1;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  text-align: left;
-  word-break: keep-all;
 }
 
 .member-txt-box {
   max-width: 500px;
+  width: 500px;
+  margin-top: 20px;
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  align-items: center;
 }
 
 .member-txt-box > div {
   margin: 10px;
-  width: 480px;
+  width: 90%; /*자기소개 잘림 방지*/
   height: 33.3333%;
 }
 
@@ -234,7 +219,7 @@ header > .menu > ul > a:hover {
 }
 
 #member .white-box {
-  /* background-color: #fff; */
+  background-color: #fff;
 }
 
 #reaction {
@@ -271,21 +256,20 @@ header > .menu > ul > a:hover {
 }
 footer {
   height: 300px;
-  margin-top: 100px;
   text-align: center;
   line-height: 300px;
 }
 
 #form {
-  height: 320px;
+  height: 350px;
   /*margin-top: 10px;*/
   overflow: hidden;
 
   background-color: rgba(0, 0, 0, 0.1);
 
   max-width: 800px;
-  width: 40%;
-  margin: 50px auto 0px auto;
+  width: 95%;
+  margin: 50px auto 50px auto;
 
   border-radius: 20px;
   padding: 20px;
@@ -294,15 +278,27 @@ footer {
 
 .formName,
 .formFire,
-.review,
-.formButton,
-.formButton2 {
+.comment,
+.formButton {
   box-sizing: border-box;
   width: 100%;
   padding: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   border: 0;
   border-radius: 10px;
+}
+
+.formButton:hover {
+  font-weight: bold;
+  background-color: lightgray;
+  cursor: pointer;
+}
+
+.formButton {
+  background-color: white;
+  color: black;
+  margin: 0;
+  margin-right: 10px;
 }
 
 .formMent {
@@ -317,7 +313,6 @@ footer {
   justify-content: center;
   align-items: center;
 }
-
 .table {
   margin: 40px auto 0;
   font-size: 18px;
