@@ -28,7 +28,7 @@ function member() {
       <div class="member-inner">
         <h2>${name}</h2>
         <div class="member-box">    
-          <div class="imgContainer">
+          <div class="member-img">
           <img src="${img}" alt="${name}">
           </div>
           <div class="member-txt-box">
