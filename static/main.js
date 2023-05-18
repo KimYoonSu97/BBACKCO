@@ -44,8 +44,6 @@ function member() {
         let style = a["style"];
         let blog = a["blog"]
 
-        let fireImage = "🔥".repeat(fire);
-
         let temp_html = `
       
         <li id="${name}" class="slideitem">
