@@ -164,6 +164,7 @@ header > .menu > ul > a:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
+  word-break: keep-all;
 }
 
 .member-inner h2 {
@@ -230,6 +231,24 @@ header > .menu > ul > a:hover {
   white-space: normal;
 }
 
+.member-style .blogLink {
+  cursor: pointer;
+  width: 100px;
+  height: 25px;
+  background-color: royalblue;
+  color: white;
+  margin: 0 auto 0;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.member-style .blogLink:hover {
+  border: 1px solid royalblue;
+  color: royalblue;
+  background-color: white;
+}
+
+
 #reaction {
   display: flex;
   flex-direction: column;
@@ -269,7 +288,7 @@ footer {
 }
 
 #form {
-  height: 350px;
+  height: 310px;
   /*margin-top: 10px;*/
   overflow: hidden;
 
@@ -294,11 +313,13 @@ footer {
   margin-bottom: 20px;
   border: 0;
   border-radius: 10px;
+  font-weight: bold;
 }
 
 .formButton:hover {
   font-weight: bold;
-  background-color: lightgray;
+  background-color: royalblue;
+  color: white;
   cursor: pointer;
 }
 

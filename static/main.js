@@ -42,6 +42,7 @@ function member() {
         let merits = a["merits"];
         let selfIntro = a["selfIntro"];
         let style = a["style"];
+        let blog = a["blog"]
 
         let fireImage = "🔥".repeat(fire);
 
@@ -59,21 +60,25 @@ function member() {
                             </div>
                             <div class="member-txt-box">
                                 <div class="member-info">
-                                    <h3>자기소개</h3>
+                                    <h3>자기소개👀</h3>
                                     <p class="white-box">
                                         ${selfIntro}
                                     </p>
                                 </div>
                                 <div class="member-strength">
-                                    <h3>자신의 장점</h3>
+                                    <h3>자신의 장점🤗</h3>
                                     <p class="white-box">
                                          ${merits}
                                     </p>
                                 </div>
                                 <div class="member-style">
-                                    <h3>협업 스타일(동물)</h3>
+                                    <h3>협업 스타일🧑‍💻</h3>
                                     <p class="white-box">${style}</p>
                                 </div>
+                                <div class="member-style">
+                                <h3>블로그 링크📓</h3>
+                                <p class="blogLink" onclick=window.open("${blog}")>바로가기👉</p>
+                            </div>
                             </div>
                         </div>
                     </div>
@@ -122,15 +127,15 @@ function save_form() {
 
   if (!checkName.val()) {
     //  frn의 product의 value값이 없을 때 = input에 입력한 값이 없을 때
-    alert("상호명을 입력해 주세요");
+    alert("닉네임을 입력해 주세요");
     checkName.focus();
     return false; //  경고창을 확인한 후 페이지가 넘어가지 않고 그대로 유지하기 위함, method빼면 못넘어감.
   } else if (checkFire.val() == 0) {
-    alert("별점을 선택해 주세요");
+    alert("응원 지수를 선택해 주세요");
     checkFire.focus();
     return false;
   } else if (!checkComment.val()) {
-    alert("코멘트를 입력해 주세요");
+    alert("응원의 말을 입력해 주세요");
     checkComment.focus();
     return false;
   } else {
