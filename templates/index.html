@@ -11,12 +11,12 @@
      rel="stylesheet"
      href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css"/> -->
 
-    <!--    <link-->
-    <!--      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"-->
-    <!--      rel="stylesheet"-->
-    <!--      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"-->
-    <!--      crossorigin="anonymous"-->
-    <!--    />-->
+<!--    <link-->
+<!--      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"-->
+<!--      rel="stylesheet"-->
+<!--      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"-->
+<!--      crossorigin="anonymous"-->
+<!--    />-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
@@ -24,7 +24,7 @@
       crossorigin="anonymous"
     ></script>
 
-    <link rel="stylesheet" type="text/css" href="../static/main.css" />
+    <link rel="stylesheet" href="../static/main.css" />
     <script defer src="../static/main.js"></script>
   </head>
   <body>
@@ -84,38 +84,36 @@
           </div>
         </div>
       </section>
-      <div class="section" id="section">
-        <input type="radio" name="slide" id="slide01" checked />
-        <input type="radio" name="slide" id="slide02" />
-        <input type="radio" name="slide" id="slide03" />
-        <div class="slidewrap">
-          <ul class="slidelist">
-            <!-- 슬라이드 영역 -->
-
-            <!-- 좌,우 슬라이드 버튼 -->
-            <div class="slide-control">
-              <div>
-                <label for="slide03" class="left"></label>
-                <label for="slide02" class="right"></label>
+      <section id="member">
+        <div id="kys">
+          <div class="member-inner">
+            <h2>김윤수(팀장)</h2>
+            <div class="member-box">
+              <div class="member-img">
+                <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=300" alt="" />
               </div>
-              <div>
-                <label for="slide01" class="left"></label>
-                <label for="slide03" class="right"></label>
-              </div>
-              <div>
-                <label for="slide02" class="left"></label>
-                <label for="slide01" class="right"></label>
+              <div class="member-txt-box">
+                <div class="member-info">
+                  <h3>자기소개</h3>
+                  <p class="white-box">
+                    이쪽에 자기소개 입력dmf ajdklfjaldknflkand;fl na;dnsndkl;a
+                  </p>
+                </div>
+                <div class="member-strength">
+                  <h3>자신의 장점</h3>
+                  <p class="white-box">
+                    이쪽에 자기소개 입력dmf ajdklfjaldknflkand;flkl;a
+                  </p>
+                </div>
+                <div class="member-style">
+                  <h3>협업 스타일(동물)</h3>
+                  <p class="white-box">이쪽에 자기소개 입력dmf ajdksndkl;a</p>
+                </div>
               </div>
             </div>
-          </ul>
-          <!-- 페이징 -->
-          <ul class="slide-pagelist">
-            <li><label for="slide01"></label></li>
-            <li><label for="slide02"></label></li>
-            <li><label for="slide03"></label></li>
-          </ul>
+          </div>
         </div>
-      </div>
+      </section>
 
       <section id="reaction">
         <div id="form">
@@ -143,12 +141,12 @@
             placeholder="응원 메시지를 남겨주세요."
           ></textarea
           ><br />
-          <input
-            onclick="save_form()"
-            class="formButton"
-            type="submit"
-            value="응원하기"
-          />
+            <input
+              onclick="save_form()"
+              class="formButton"
+              type="submit"
+              value="응원하기"
+          </div>
         </div>
       </section>
 

@@ -47,42 +47,38 @@ function member() {
 
         let temp_html = `
       
-                <li id="${name}" class="slideitem">
-                    <a>
-                        <section id="member">
-                            <div id="kys">
-                                <div class="member-inner">
-                                    <h2>${name}</h2>
-                                    <div class="member-box">
-                                        <div class="member-img">
-                                             <img src="${img}" alt="${name}">
-                                        </div>
-                                        <div class="member-txt-box">
-                                            <div class="member-info">
-                                                <h3>자기소개</h3>
-                                                <p class="white-box">
-                                                    ${selfIntro}
-                                                </p>
-                                            </div>
-                                            <div class="member-strength">
-                                                <h3>자신의 장점</h3>
-                                                <p class="white-box">
-                                                     ${merits}
-                                                </p>
-                                            </div>
-                                            <div class="member-style">
-                                                <h3>협업 스타일(동물)</h3>
-                                                <p class="white-box">${style}</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                    </a>
-                </li>
+      <div id="${name}" class="member-card">
+      <div class="member-inner">
+        <h2>${name}</h2>
+        <div class="member-box">    
+          <div class="member-img">
+          <img src="${img}" alt="${name}">
+          </div>
+          <div class="member-txt-box">
+            <div class="member-info">
+              <h4>자기소개</h4>
+              <p class="white-box">
+                ${selfIntro}
+              </p>
+            </div>
+            <div class="member-strength">
+              <h4>자신의 장점</h4>
+              <p class="white-box">
+                ${merits}
+              </p>
+            </div>
+            <div class="member-style">
+              <h4>협업 스타일</h4>
+              <p class="white-box">
+              ${style}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     `;
-        $(".slidelist").append(temp_html);
+        $("#member").append(temp_html);
       });
     });
 }
@@ -114,15 +110,35 @@ function comment() {
     });
 }
 
+//  폼 작성(댓글) 데이터 저장하는 코드
+//  공유하기 유효성 검사 추가하였음
 function save_form() {
-  let name = $("#name").val();
-  let fire = $("#fire").val();
-  let comment = $("#comment").val();
+  let checkName = $("#name");
+  let checkFire = $("#fire");
+  let checkComment = $("#comment");
 
-  let formData = new FormData();
-  formData.append("name_give", name);
-  formData.append("comment_give", comment);
-  formData.append("fire_give", fire);
+  if (!checkName.val()) {
+    //  frn의 product의 value값이 없을 때 = input에 입력한 값이 없을 때
+    alert("상호명을 입력해 주세요");
+    checkName.focus();
+    return false; //  경고창을 확인한 후 페이지가 넘어가지 않고 그대로 유지하기 위함, method빼면 못넘어감.
+  } else if (checkFire.val() == 0) {
+    alert("별점을 선택해 주세요");
+    checkFire.focus();
+    return false;
+  } else if (!checkComment.val()) {
+    alert("코멘트를 입력해 주세요");
+    checkComment.focus();
+    return false;
+  } else {
+    let name = $("#name").val();
+    let fire = $("#fire").val();
+    let comment = $("#comment").val();
+
+    let formData = new FormData();
+    formData.append("name_give", name);
+    formData.append("comment_give", comment);
+    formData.append("fire_give", fire);
 
     fetch("/comments", { method: "POST", body: formData })
       .then((res) => res.json())
@@ -132,8 +148,42 @@ function save_form() {
         window.location.reload();
       });
   }
+}
 
-  
+// 좋아요 숫자를 늘려주는 함수를 만들것입니다...
+
+// 이 라이크넘버는... html에서 가져와야해..숫자를 윤수야...
+
+
+// 라이크 아이콘을 누르면 이 함수가 실행될꺼야....
+function PlusLikeNum() {
+
+  let countEl = $("#like-count");
+  let likeNum = Number(countEl.text());
+  // console.log(typeof likeNum);
+
+  // 가져온 라이크넘버에숫자 1을 더해
+  likeNum = likeNum + 1;
+  // 그리고 바로 출력해 // 이건 성공!
+  $("#like-count").text(likeNum);
+
+  // 이제 이걸 db에 보내야해
+  let formData = new FormData();
+  formData.append("like-plus", likeNum);
+
+  fetch("/like", { method: "POST", body: formData })
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data["msg"]);
+    });
+}
+
+// 좋아요 숫자 를 출력해주는 함수
+
+
+
+
+
 // 빡코더 되기 열기 버튼
 function open_box() {
   $("#post-box").show();
