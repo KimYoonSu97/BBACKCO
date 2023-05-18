@@ -78,7 +78,7 @@ function member() {
       </div>
     </div>
     `;
-        $("#member").append(temp_html);
+        $(".slidelist").append(temp_html);
       });
     });
 }
@@ -110,8 +110,6 @@ function comment() {
     });
 }
 
-//  폼 작성(댓글) 데이터 저장하는 코드
-//  공유하기 유효성 검사 추가하였음
 function save_form() {
   let checkName = $("#name");
   let checkFire = $("#fire");
