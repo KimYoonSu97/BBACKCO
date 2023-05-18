@@ -47,36 +47,40 @@ function member() {
 
         let temp_html = `
       
-      <div id="${name}" class="member-card">
-      <div class="member-inner">
-        <h2>${name}</h2>
-        <div class="member-box">    
-          <div class="member-img">
-          <img src="${img}" alt="${name}">
-          </div>
-          <div class="member-txt-box">
-            <div class="member-info">
-              <h4>자기소개</h4>
-              <p class="white-box">
-                ${selfIntro}
-              </p>
-            </div>
-            <div class="member-strength">
-              <h4>자신의 장점</h4>
-              <p class="white-box">
-                ${merits}
-              </p>
-            </div>
-            <div class="member-style">
-              <h4>협업 스타일</h4>
-              <p class="white-box">
-              ${style}
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+        <li id="${name}" class="slideitem">
+        <a>
+            <section id="member">
+                <div id="${name}">
+                    <div class="member-inner">
+                        <h2>${name}</h2>
+                        <div class="member-box">
+                            <div class="member-img">
+                                 <img src="${img}" alt="${name}">
+                            </div>
+                            <div class="member-txt-box">
+                                <div class="member-info">
+                                    <h3>자기소개</h3>
+                                    <p class="white-box">
+                                        ${selfIntro}
+                                    </p>
+                                </div>
+                                <div class="member-strength">
+                                    <h3>자신의 장점</h3>
+                                    <p class="white-box">
+                                         ${merits}
+                                    </p>
+                                </div>
+                                <div class="member-style">
+                                    <h3>협업 스타일(동물)</h3>
+                                    <p class="white-box">${style}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </a>
+    </li>
     `;
         $(".slidelist").append(temp_html);
       });
@@ -110,6 +114,7 @@ function comment() {
     });
 }
 
+// 댓글 작성 유효성 검사 함수
 function save_form() {
   let checkName = $("#name");
   let checkFire = $("#fire");
